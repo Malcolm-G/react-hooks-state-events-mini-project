@@ -4,12 +4,12 @@ import NewTaskForm from "./NewTaskForm";
 import TaskList from "./TaskList";
 
 import { CATEGORIES, TASKS } from "../data";
-console.log("Here's the data you're working with");
-console.log({ CATEGORIES, TASKS });
+// console.log("Here's the data you're working with");
+// console.log({ CATEGORIES, TASKS });
 
 function App() {
 
-  const [todos,setTodos] = useState(TASKS);
+  const [todos,setTodos] = useState(TASKS || []);
   const [activeButton,setActiveButton] = useState("All")
   // const [newTask,setNewTask] = useState({});
 
@@ -44,7 +44,6 @@ function App() {
       <TaskList
       tasks={TASKS}
       activeButton={activeButton}
-      // newTask={newTask}
       todos={todos}
       setTodos={setTodos}
       />

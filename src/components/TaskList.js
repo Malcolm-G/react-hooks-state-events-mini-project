@@ -3,7 +3,7 @@ import Task from "./Task";
 
 function TaskList({tasks,activeButton,todos,setTodos}) {
 
-  const filteredTodos = todos.filter((todo)=>{
+  const filteredTodos = todos?.filter((todo)=>{
     if(activeButton==='All'){
       return true
     }
@@ -12,7 +12,7 @@ function TaskList({tasks,activeButton,todos,setTodos}) {
     }
   })
 
-  const tasksList = filteredTodos.map((todo)=>(
+  const tasksList = filteredTodos?.map((todo)=>(
     <Task
     key={`${todo.text}-${todo.category}`}
     text={todo.text}
@@ -23,7 +23,6 @@ function TaskList({tasks,activeButton,todos,setTodos}) {
 
 
   function removeTask(text){
-    console.log(text)
     const updatedList = todos.filter((todo)=>(todo.text!==text))
     setTodos((todos)=>{
       todos=updatedList
