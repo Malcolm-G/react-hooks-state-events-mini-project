@@ -19,6 +19,7 @@ function NewTaskForm({categories,onTaskFormSubmit}) {
     onSubmit={(e)=>{
       e.preventDefault();
       onTaskFormSubmit({"text":newText,"category":newCategory});
+      setNewText("");
     }}>
       <label>
         Details
